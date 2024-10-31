@@ -1,0 +1,18 @@
+train_params: 
+  need_train: True
+  exp_name: test
+  learning_rate: 0.001
+  batch_size: 32
+  num_epochs: 500
+  num_of_folds: 5
+  model_type: resnet_50
+  criterion: SSIM
+  optimizer_name: Adam
+  device: 0
+  dataset_path: [...]
+  image_size: 256
+eval_params:
+  score_types: [SSIM, MSE, MS_SSIM, Thresholded_SSIM, Patched_SSIM, Patched_MS_SSIM]
+  need_eval: True
+  eval_dir: test #only needed if need_train is false
+  eval_datasets:  [...]
