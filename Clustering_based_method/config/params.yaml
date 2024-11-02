@@ -1,0 +1,39 @@
+image_size: 640
+save_dir: product
+device: 0
+half: True
+weights_path: []
+image_file_path: []
+
+normal_image_file_path: []
+anomaly_image_file_path: []
+saved_detection: [] 
+scaling_type:  robust #standard #normalization 
+
+YOLO_layers: [10]
+dim_reduction_type: UMAP_and_PCA # PCA  #UMAP
+PCA_explained_variance: False
+pca_params:
+  n_components: 300
+umap_params:
+  metric:  correlation #euclidean 
+  set_op_mix_ratio: 0.5
+  n_components: 30
+  n_neighbors: 30
+  min_dist: 0.0
+dbscan_eps_test: False
+clastering_method: HDBSCAN #DBSCAN
+hdbscan_params:
+  min_cluster_size: 10
+  cluster_selection_epsilon: 0.08
+  min_samples: 5
+  allow_single_cluster: False
+  alpha: 1.0
+  metric: l2
+  cluster_selection_method: eom
+dbscan_params:
+  min_samples: 50
+  eps: 20
+  algorithm: ball_tree
+  metric: euclidean
+
